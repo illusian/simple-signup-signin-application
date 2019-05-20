@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="demoapp.LoginPage" 
+             xmlns:viewModel="clr-namespace:demoapp.ViewModel;assembly=demoapp"
+             BackgroundColor="#2d2532">
+    <ContentPage.BindingContext>
+        <viewModel:UserViewModel/>
+    </ContentPage.BindingContext>    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="30,20,30,20" VerticalOptions="StartAndExpand">
+            <Label Text="Welcome" FontSize="40" XAlign="Center" TextColor="White" Margin="0,20,0,0"/>
+            <Label Text="Login to Demo" XAlign="Center" TextColor="White"/>
+            <Label Text="Email" TextColor="White"/>
+            <Entry x:Name="email_entry" Text="{Binding email}" Placeholder="" />
+            <Label Text="Password" TextColor="White" Margin="0,10,0,0"/>
+            <Entry x:Name="password_entry" Text="{Binding password}" IsPassword="true" />
+            <Label Text="Forgot Password?" TextDecorations="Underline" TextColor="White" Margin="0,-5,0,0" XAlign="End"/>
+            
+            <OnPlatform x:TypeArguments="View">
+            <OnPlatform.Android>
+            <Button Text="Login" TextColor="White" Command="{Binding LoginCommand}" BackgroundColor="Orange" CornerRadius="5" HeightRequest="50" Margin="0,20,0,0"/>            
+            </OnPlatform.Android>
+            
+            <OnPlatform.iOS>
+            <Button Text="Login" TextColor="White" Command="{Binding LoginCommand}" BackgroundColor="Orange" CornerRadius="5" HeightRequest="30" Margin="0,20,0,0"/>            
+            </OnPlatform.iOS>
+            </OnPlatform>
+                
+            <Label Text="Don't have an account yet?" XAlign="Center" TextColor="White" Margin="0,10,0,0"/>
+            <Button Text="Register here" TextColor="White" Clicked="OnSignUpButtonClicked" Margin="0,-15,0,0" BackgroundColor="Transparent"/>
+            
+            <Label x:Name="messageLabel" />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

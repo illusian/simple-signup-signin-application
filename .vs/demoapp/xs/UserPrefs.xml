@@ -1,0 +1,52 @@
+﻿<Properties StartupConfiguration="{47E2CC31-1019-4FA1-BF8B-0D53B7044F83}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="demoapp/View/signup.xaml">
+    <Files>
+      <File FileName="demoapp/View/MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="demoapp/View/loginPage.xaml" />
+      <File FileName="demoapp/View/loginPage.xaml.cs" Line="2" Column="3" />
+      <File FileName="demoapp/App.xaml" />
+      <File FileName="demoapp/View/MainPage.xaml" />
+      <File FileName="demoapp/App.xaml.cs" Line="18" Column="14" />
+      <File FileName="demoapp/View/signup.xaml" />
+      <File FileName="demoapp/View/signup.xaml.cs" Line="66" Column="1" />
+      <File FileName="demoapp.iOS/Main.cs" Line="21" Column="1" />
+      <File FileName="demoapp/Model/UserModel.cs" Line="1" Column="1" />
+      <File FileName="demoapp/Util/Util.cs" Line="25" Column="51" />
+      <File FileName="demoapp/ViewModel/UserViewModel.cs" Line="40" Column="29" />
+      <File FileName="demoapp.iOS/AppDelegate.cs" Line="26" Column="1" />
+      <File FileName="demoapp.Android/MainActivity.cs" Line="15" Column="33" />
+      <File FileName="demoapp.Android/Assets/AboutAssets.txt" Line="9" Column="29" />
+      <File FileName="demoapp/View/webView.xaml" />
+      <File FileName="demoapp/View/webView.xaml.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="demoapp" expanded="True">
+            <Node name="demoapp" expanded="True">
+              <Node name="Model" expanded="True" />
+              <Node name="Util" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="loginPage.xaml" expanded="True" />
+                <Node name="MainPage.xaml" expanded="True" />
+                <Node name="signup.xaml" expanded="True" selected="True" />
+                <Node name="webView.xaml" expanded="True" />
+              </Node>
+              <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.demoapp.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.test_device" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.demoapp HideGettingStarted="True" />
+  <MonoDevelop.Ide.ItemProperties.demoapp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F81FC324-87B0-4DEB-9704-DA728EC375A2" />
+</Properties>

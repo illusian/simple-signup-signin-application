@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:viewModel="clr-namespace:demoapp.ViewModel;assembly=demoapp"
+             x:Class="demoapp.signup"
+             Title="Create My Account"
+             BackgroundColor="#2d2532">
+    <ContentPage.BindingContext>
+        <viewModel:UserViewModel/>
+    </ContentPage.BindingContext>    
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="10,10,10,0" VerticalOptions="StartAndExpand">
+            <Label Text="First Name" TextColor="White"/>
+            <Entry x:Name="first_entry" Text="{Binding firstName}" Margin="0,0,0,10"/>
+            
+            <Label Text="Last Name" TextColor="White"/>
+            <Entry x:Name="last_entry" Text="{Binding lastName}" Margin="0,0,0,10"/>
+            
+            <Label Text="Email" TextColor="White"/>
+            <Entry x:Name="email_entry" Text="{Binding email}" Margin="0,0,0,10"/>
+            
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Text="Gender" TextColor="White"/>
+                <Label Text="(Optional)" TextColor="White" FontSize="Micro" YAlign="End"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+<!--                <controls:BindableRadioGroup x:Name="Radiobtn" SelectedIndex="{Binding gender}" HorizontalOptions="Start"/>-->
+            <Image WidthRequest="20" Aspect="AspectFit" x:Name="radioButton1" ClassId="m" Source="off.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="radioButton_Clicked"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Male" TextColor="White"/>
+            <Image WidthRequest="20" Aspect="AspectFit" x:Name="radioButton2" ClassId="f" Source="off.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="radioButton_Clicked"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="FeMale" TextColor="White"/>
+
+            </StackLayout>
+                
+            <Label Text="Birthday" TextColor="White"/>
+            <DatePicker x:Name="birthdate_entry" Date="{Binding birthday, Mode=TwoWay}" Margin="0,0,0,10"/>
+            
+            <Label Text="Country" TextColor="White"/>
+            <Picker x:Name="country_entry" SelectedIndex="{Binding country}" HorizontalOptions="FillAndExpand" Margin="0,0,0,10">
+                <Picker.Items>
+                    <x:String>New Zealand</x:String> 
+                    <x:String>Australia</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="State" TextColor="White"/>
+                <Label Text="(Optional)" TextColor="White" FontSize="Micro" YAlign="End"/>
+            </StackLayout>
+            <Picker x:Name="state_entry" SelectedIndex="{Binding state}" HorizontalOptions="FillAndExpand" IsEnabled="false" Margin="0,0,0,10">
+                <Picker.Items>
+                    <x:String>New Zealand</x:String> 
+                    <x:String>Australia</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Password" TextColor="White"/>
+            <Entry x:Name="password_entry" IsPassword="true" Text="{Binding password}" Margin="0,0,0,10"/>
+            
+            <Label Text="Confirm Password" TextColor="White"/>
+            <Entry x:Name="passwordc_entry" IsPassword="true" Text="{Binding password_confirmation}" Margin="0,0,0,10"/>
+            
+            <StackLayout Orientation="Horizontal"  >
+              <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="9*" />
+                <ColumnDefinition Width="1*"/> 
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="5*" />
+                  <RowDefinition Height="5*" />
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+                  <Label Text="Please accept our" TextColor="#FFFFFF" FontSize="Micro" />
+                  <Label Text="Terms and Conditions" TextDecorations="Underline" TextColor="#FFFFFF" FontSize="Micro" />
+                  <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="openTnc" NumberOfTapsRequired="1"/>
+                  </Label.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.RowSpan="2" >
+                <Image WidthRequest="20" Aspect="AspectFit" x:Name="checkb" ClassId="{Binding tnc, Mode=TwoWay}" Source="unchecked.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="checkb_Clicked"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                </Image>
+<!--                  <Label Text="Second1" TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand" YAlign="Center" />-->
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1" >
+                  <Label Text="and our" TextColor="#FFFFFF" FontSize="Micro"/>
+                  <Label Text="Privacy Policy" TextDecorations="Underline" TextColor="#FFFFFF" FontSize="Micro" />  
+                </StackLayout>
+
+              </Grid>
+            </StackLayout>
+                
+<!--            <StackLayout Orientation="Horizontal">
+                <Label Text="Please accept our" TextColor="White" FontSize="Micro"/>
+                <Label x:Name="tnc" Text="Terms and Conditions" TextColor="White" FontSize="Micro"/>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+                <Image WidthRequest="20" Aspect="AspectFit" x:Name="checkb" Source="unchecked.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="checkb_Clicked"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Label Text="and our Privacy Policy" TextColor="White" FontSize="Micro"/>
+-->            
+            <OnPlatform x:TypeArguments="View">
+            <OnPlatform.Android>
+            <Button Text="Register" TextColor="White" Command="{Binding RegCommand}" BackgroundColor="Orange" CornerRadius="5" HeightRequest="50" Margin="0,20,0,0"/>
+            </OnPlatform.Android>
+            
+            <OnPlatform.iOS>
+            <Button Text="Register" TextColor="White" Command="{Binding RegCommand}" BackgroundColor="Orange" CornerRadius="5" HeightRequest="30" Margin="0,20,0,0"/>
+            </OnPlatform.iOS>
+            </OnPlatform>
+            
+            <Label x:Name="messageLabel" />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
